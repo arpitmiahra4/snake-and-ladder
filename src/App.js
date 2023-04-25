@@ -4,8 +4,8 @@ import LandingPage from './Pages/LandingPage';
 
 function App() {
   return (
-    <Box>
-    <LandingPage />
+    <Box bg={"black"} w="100%" h={"100vh"}>
+      <LandingPage />
     </Box>
   );
 }
