@@ -100,7 +100,7 @@ function play(player, psum, correction, num) {
     }
 
 
-    document.getElementById(`${player}`).style.transition = `linear all .5s`
+    document.getElementById(`${player}`)
 
     if (sum < 10) {
         document.getElementById(`${player}`).style.left = `${(sum - 1) * 62}px`
@@ -147,15 +147,16 @@ function play(player, psum, correction, num) {
 document.getElementById("diceBtn").addEventListener("click", function () {
     rollingSound.play()
     num = Math.floor(Math.random() * (6 - 1 + 1) + 1)
-    document.getElementById("dice").innerText = num
-
-
+    document.getElementById("dice").innerText = `Dice No :- ${num}`
+    document.getElementById("dice").style.color ="teal"
     if (tog % 2 != 0) {
-        document.getElementById('tog').innerText = "Yellow's Turn : "
+        document.getElementById('tog').innerText = "Blue's Turn"
+        document.getElementById('tog').style.color="blue"
         play('p1', 'p1sum', 0, num)
     }
     else if (tog % 2 == 0) {
-        document.getElementById('tog').innerText = "Red's Turn : "
+        document.getElementById('tog').innerText = "Red's Turn"
+        document.getElementById('tog').style.color="red"
         play('p2', 'p2sum', 55, num)
     }
     tog = tog + 1
